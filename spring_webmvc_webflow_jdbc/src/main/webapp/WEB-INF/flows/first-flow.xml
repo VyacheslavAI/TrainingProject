@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+start-state="first">
+
+    <var name="userRepo" class="com.max.repo.UserRepo"/>
+    <input name="i" type="int"/>
+    <on-start>
+        <evaluate expression="777" result="i"/>
+    </on-start>
+
+    <view-state id="first" view="first">
+        <transition on="action" to="myAction"/>
+    </view-state>
+
+    <action-state id="myAction">
+        <evaluate expression="myFlowBean.printI(flowScope.i)"/>
+        <transition to="decision"/>
+    </action-state>
+
+    <decision-state id="decision">
+        <if test="myFlowBean.trueOrFalse()" then="second" else="third"/>
+    </decision-state>
+
+    <view-state id="second" view="second"/>
+    <view-state id="third" view="third"/>
+</flow>

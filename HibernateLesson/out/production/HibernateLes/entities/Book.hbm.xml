@@ -1,0 +1,7 @@
+<hibernate-mapping>
+    <class entity-name="MyClass">
+        <id name="MyID" column="MyId" length="20" type="string"/>
+        <property name="title" column="MyTitle" length="50" not-null="true" type="string"/>
+        <property name="author" column="MyAuthor" length="50" not-null="true" type="string"/>
+    </class>
+</hibernate-mapping>

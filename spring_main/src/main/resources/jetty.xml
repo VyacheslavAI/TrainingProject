@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Configure id="jdbc/testDB" class="org.eclipse.jetty.server.Server">
+    <New id="jdbc/testDB" name="jdbc/testDB" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jdbc/testDB</Arg>
+        <Arg>
+            <New class="org.apache.commons.dbcp.BasicDataSource">
+                <Set name="driverClassName">com.mysql.jdbc.Driver</Set>
+                <Set name="url">
+                    jdbc:mysql://localhost:3306/Testing?useLegacyDatetimeCode=false&amp;serverTimezone=UTC
+                </Set>
+                <Set name="username">root</Set>
+                <Set name="password">root</Set>
+            </New>
+        </Arg>
+    </New>
+</Configure>

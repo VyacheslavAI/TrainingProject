@@ -1,0 +1,1 @@
+create table if not exists user(id mediumint not null auto_increment, name char(30) not null, primary key(id));
